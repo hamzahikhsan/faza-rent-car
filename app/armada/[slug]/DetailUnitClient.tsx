@@ -56,7 +56,7 @@ export default function DetailUnitClient({ unit }: Props) {
             <div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-line-200 mb-3">
                 <Image
-                  src={unit.foto[activePhoto] ?? "/placeholder-unit.jpg"}
+                  src={unit.foto[activePhoto] ?? unit.foto[0]}
                   alt={`${unit.nama} - foto ${activePhoto + 1}`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
