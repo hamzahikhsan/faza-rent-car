@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageCircle, Car } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { clsx } from "clsx";
 import Button from "@/components/ui/Button";
 import { buildGeneralWaLink } from "@/lib/whatsapp";
@@ -41,9 +42,16 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0 font-bold text-blue-600 text-lg">
-          <Car size={24} className="text-blue-500" />
-          <span>FAZA<span className="text-ink-900 font-semibold"> Rent Car</span></span>
+        <Link href="/" className="flex items-center shrink-0" aria-label="FAZA Rent Car — Beranda">
+          <Image
+            src="/logo.svg"
+            alt="FAZA Rent Car"
+            width={120}
+            height={66}
+            priority
+            unoptimized
+            className="h-11 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

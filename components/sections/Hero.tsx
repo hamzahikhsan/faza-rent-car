@@ -21,15 +21,18 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/30 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-white/20 blur-3xl" />
-      </div>
+    <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden min-h-[560px] lg:min-h-[620px]">
+      {/* Vehicle image — full height of section, anchored right */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero-kendaraan.svg"
+        alt=""
+        aria-hidden="true"
+        className="hidden lg:block absolute top-0 right-0 h-full w-auto pointer-events-none select-none"
+      />
 
-      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
+        <div className="lg:max-w-[52%]">
           {/* Micro-trust */}
           <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
             <MapPin size={14} />
@@ -83,7 +86,7 @@ export default function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 pb-4">
             <Link href={buildArmadaLink()}>
               <Button variant="white" size="lg" className="w-full sm:w-auto shadow-card-hover">
                 Lihat Armada

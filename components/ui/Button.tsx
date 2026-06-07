@@ -3,7 +3,7 @@ import { forwardRef, ButtonHTMLAttributes } from "react";
 import { Loader2 } from "lucide-react";
 import { clsx } from "clsx";
 
-type Variant = "primary" | "whatsapp" | "secondary" | "ghost" | "white";
+type Variant = "primary" | "whatsapp" | "secondary" | "ghost" | "white" | "gold";
 type Size = "sm" | "md" | "lg";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,6 +24,8 @@ const variantClasses: Record<Variant, string> = {
     "text-blue-600 bg-transparent hover:bg-blue-50 active:bg-blue-100 disabled:opacity-40 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
   white:
     "bg-white text-blue-600 hover:bg-blue-50 active:bg-blue-100 disabled:opacity-40 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2",
+  gold:
+    "bg-gold-400 text-ink-900 hover:bg-gold-500 active:bg-gold-500 disabled:bg-gold-400/40 focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2",
 };
 
 const sizeClasses: Record<Size, string> = {

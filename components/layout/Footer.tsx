@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Car, Share2, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Share2, ExternalLink } from "lucide-react";
 import { buildGeneralWaLink } from "@/lib/whatsapp";
 
 const WA_NUMBER_DISPLAY = process.env.NEXT_PUBLIC_WA_DISPLAY ?? "0812-3456-7890";
@@ -20,9 +21,15 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div className="lg:col-span-1">
-          <div className="flex items-center gap-2 mb-3">
-            <Car size={22} className="text-blue-300" />
-            <span className="font-bold text-lg">FAZA Rent Car</span>
+          <div className="inline-flex items-center bg-white rounded-xl px-3 py-2 mb-4">
+            <Image
+              src="/logo.svg"
+              alt="FAZA Rent Car"
+              width={120}
+              height={66}
+              unoptimized
+              className="h-9 w-auto"
+            />
           </div>
           <p className="text-sm text-white/60 leading-relaxed mb-4">
             PT FAZA Cemerlang Abadi — Penyedia rental mobil & motor terpercaya di Cikarang sejak 2012.

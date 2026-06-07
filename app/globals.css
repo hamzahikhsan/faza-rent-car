@@ -10,6 +10,14 @@
   --color-blue-700: #003D99;
   --color-azure-500: #007FFF;
 
+  /* Secondary / Gold (warna logo) */
+  --color-gold-50: #FEFCE8;
+  --color-gold-100: #FCF6C5;
+  --color-gold-300: #F7EB85;
+  --color-gold-400: #F3E157;
+  --color-gold-500: #E3CE2A;
+  --color-gold-600: #A89100;
+
   /* Semantic */
   --color-success: #16A34A;
   --color-warning: #F59E0B;
