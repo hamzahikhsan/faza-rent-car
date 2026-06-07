@@ -85,3 +85,12 @@ body {
 .slide-in-from-bottom-4 {
   animation-name: slide-in-from-bottom;
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

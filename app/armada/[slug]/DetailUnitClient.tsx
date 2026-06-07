@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import { Users, Fuel, Settings, Calendar, CheckCircle, MessageCircle } from "lucide-react";
 import type { Unit } from "@/lib/data/units";
 import { UNITS } from "@/lib/data/units";
@@ -10,6 +9,7 @@ import Chip from "@/components/ui/Chip";
 import Button from "@/components/ui/Button";
 import Rating from "@/components/ui/Rating";
 import UnitCard from "@/components/ui/UnitCard";
+import ImageGallery from "@/components/ui/ImageGallery";
 import OverlayForm from "@/components/forms/OverlayForm";
 import { buildQuickWaLink } from "@/lib/whatsapp";
 
@@ -19,7 +19,6 @@ interface Props {
 
 export default function DetailUnitClient({ unit }: Props) {
   const [formOpen, setFormOpen] = useState(false);
-  const [activePhoto, setActivePhoto] = useState(0);
 
   const unitTestimonials = TESTIMONIALS.filter(
     (t) => !t.unitTerkait || t.unitTerkait === unit.id || t.unitTerkait === unit.slug
@@ -53,34 +52,7 @@ export default function DetailUnitClient({ unit }: Props) {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* ── Galeri ── */}
-            <div>
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-line-200 mb-3">
-                <Image
-                  src={unit.foto[activePhoto] ?? unit.foto[0]}
-                  alt={`${unit.nama} - foto ${activePhoto + 1}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              {unit.foto.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto pb-1">
-                  {unit.foto.map((src, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setActivePhoto(i)}
-                      className={`relative shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors cursor-pointer ${
-                        i === activePhoto ? "border-blue-500" : "border-transparent"
-                      }`}
-                    >
-                      <Image src={src} alt="" fill className="object-cover" sizes="64px" />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            <ImageGallery images={unit.foto} alt={unit.nama} />
 
             {/* ── Info utama ── */}
             <div className="flex flex-col gap-5">
