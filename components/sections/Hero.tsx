@@ -22,13 +22,14 @@ export default function Hero() {
 
   return (
     <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-azure-500 text-white overflow-hidden min-h-[560px] lg:min-h-[620px]">
-      {/* Vehicle image — full height of section, anchored right */}
+      {/* Vehicle image — shifted right so black SUV is half-cropped at the edge */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/hero-kendaraan.svg"
         alt=""
         aria-hidden="true"
-        className="hidden lg:block absolute top-0 right-0 h-full w-auto pointer-events-none select-none"
+        className="hidden lg:block absolute top-0 h-full w-auto pointer-events-none select-none"
+        style={{ right: "-12%" }}
       />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 py-16 sm:py-20 lg:py-24">
